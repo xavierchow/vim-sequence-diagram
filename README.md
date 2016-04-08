@@ -15,11 +15,10 @@ and [JS Sequence Diagram](https://github.com/bramp/js-sequence-diagrams).
 And its [online editing feature](https://bramp.github.io/js-sequence-diagrams/) is cool as well.
 However, there're 2 drawbacks:
 
-1. Online editing is opt to lost, especiall an unexpected browser fresh or history-back.
-2. You have to copy&paste between the online web page and your text editor.
+1. Online editing is opt to lost, especially with an unexpected browser fresh or history-back.
+2. You have to copy&paste between the online web page and your text editor repeatedly for updating/preview.
 
-This vim plugin helps you hanlde the issues above, write your sequence defination in vim, press a hotkey to preview it in browser!
-
+This vim plugin helps you hanlde the issues above, write your sequence diagram description in vim, press a hotkey to preview it in browser!
 
 Installation
 ------------
@@ -32,10 +31,17 @@ Installation
 Usage
 -----
 
+### Keymap for preview
 The default keymap is `<leader>t`, it brings up a browser window and shows the sequence diagram for you.
 You can also define your keymap in vimrc.
 ```
 nmap <unique> <leader>t <Plug>GenerateDiagram 
+```
+### JS Sequence Diagram Theme
+Currently there're mainly 2 themes with js-sequence-diagrams, `hand drawn` and `simple`.
+You can add the following line into your vimrc for using `hand drawn` theme, set it to 0 or remove the line for `simple` theme.
+```
+let g:generate_diagram_theme_hand = 1
 ```
 
 License
