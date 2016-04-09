@@ -34,6 +34,8 @@ Usage
 This plugin only applies to files with `.seq` or `.sequence` file extension,
 that means it has nearly no performance impact on other file types.
 
+**Note:** Make sure you have renamed the file name with proper extension.
+
 ### Keymap for preview
 The default keymap is `<leader>t`, it brings up a browser window and shows the sequence diagram for you.
 You can also define your keymap in vimrc.
