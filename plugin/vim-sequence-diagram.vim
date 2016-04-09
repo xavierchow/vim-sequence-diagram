@@ -15,7 +15,7 @@ let current_script_path = resolve(expand('<sfile>:p:h'))
 if ( !hasmapto( '<Plug>GenerateDiagram', 'n' ) ) 
   nmap <unique> <leader>t <Plug>GenerateDiagram 
 endif 
-nmap <silent> <Plug>GenerateDiagram
+autocmd FileType sequence nmap <silent> <buffer> <Plug>GenerateDiagram
       \ :call vim_seq_diag#Generate_diagram(current_script_path)<CR>
 
 if !exists("g:generate_diagram_theme_hand")

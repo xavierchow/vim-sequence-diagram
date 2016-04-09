@@ -30,6 +30,9 @@ Installation
 
 Usage
 -----
+### File extension
+This plugin only applies to files with `.seq` or `.sequence` file extension,
+that means it has nearly no performance impact on other file types.
 
 ### Keymap for preview
 The default keymap is `<leader>t`, it brings up a browser window and shows the sequence diagram for you.
