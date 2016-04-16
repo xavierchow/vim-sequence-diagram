@@ -29,6 +29,11 @@ function! vim_seq_diag#Generate_diagram(pluginPath)
   silent :w!
   :bd
   execute "tabn " . originTab 
-  call system("open " . out)
+
+  if has('mac')
+    call system("osascript " . a:pluginPath . '/applescript/active.scpt')
+  else
+    call system("open " . out)
+  endif
 endfunction
 
