@@ -9,6 +9,8 @@ syntax match seqKeyword /\cnote over/
 syntax match seqKeyword /\ctitle/
 syntax match seqOperator /->/
 syntax match seqOperator /-->/
+syntax match seqOperator /->>/
+syntax match seqOperator /-->>/
 syntax region seqString matchgroup=Special start=/\v:\s/ end=/\v$/
 highlight link seqKeyword Keyword
 highlight link seqOperator Operator
