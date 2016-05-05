@@ -4,6 +4,7 @@ function! vim_seq_diag#Generate_diagram(pluginPath)
   "for substitute here needs 4 backslashs, but remember it's inside of double
   "quota string, so actually 8 backslashs literally
   call map(buf, 'substitute' . "(v:val, '\\', '\\\\\\\\', 'g')")
+  call map(buf, 'substitute' . "(v:val, '`', '\\\\`', 'g')")
 
   let tmpl = a:pluginPath . '/tmpl.html'
   let tmpDir = "/tmp/vim-js-seq/"
