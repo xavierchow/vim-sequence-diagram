@@ -26,7 +26,7 @@ Installation
 
 * With [Pathogen](https://github.com/tpope/vim-pathogen): Place `vim-sequnce-diagram/` in `.vim/bundle/`.
 * With [Vundle](https://github.com/VundleVim/Vundle.vim):
-    * Add `Plugin 'xavierchow/vim-sequnce-diagram'` to your `.vimrc`.
+    * Add `Plugin 'xavierchow/vim-sequence-diagram'` to your `.vimrc`.
     * Launch `vim` and run `:PluginInstall`
 
 Usage
