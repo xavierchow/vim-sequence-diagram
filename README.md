@@ -18,7 +18,7 @@ However, there're 2 drawbacks:
 1. Online editing is opt to be lost, especially with an unexpected browser fresh or history-back.
 2. You have to copy&paste between the online web page and your text editor repeatedly for updating/preview.
 
-This vim plugin helps you hanlde the issues above, write your sequence diagram description in vim, press a hotkey to preview it in browser!
+This vim plugin helps you handle the issues above, write your sequence diagram description in vim, press a hotkey to preview it in browser!
 ![Screenshot](images/screenshot.gif)
 
 Installation
