@@ -34,7 +34,7 @@ function! vim_seq_diag#Generate_diagram(pluginPath)
   if has('mac')
     call system("osascript " . a:pluginPath . '/applescript/active.scpt')
   else
-    call system("open " . out)
+    call system("xdg-open " . out)
   endif
 endfunction
 
