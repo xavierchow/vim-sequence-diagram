@@ -3,14 +3,31 @@
     <script src="underscore-min.js"></script>
     <script src="raphael-min.js"></script>
     <script src="sequence-diagram-min.js"></script>
+    <script src="browser.min.js"></script>
   </head>
   <body>
     <div id="diagram"></div>
+    <div id="btnGroup">
+      <button type="button" id="svg">Save as SVG</button>
+      <button type="button" id="png">Save as PNG</button>
+    </div>
     <script> 
       var diagram = Diagram.parse(`
           `);
       diagram.drawSVG('diagram', {theme: 
       });
+      var svgsaver = new SvgSaver();
+      var div = document.getElementById("diagram");
+      var btn = document.getElementById("btnGroup");
+      btn.addEventListener("click", function (e) {
+        if (e.target === document.getElementById("svg")) {
+          svgsaver.asSvg(div.firstElementChild, "sequence.svg");
+        }
+        if (e.target === document.getElementById("png")) {
+          svgsaver.asPng(div.firstElementChild, "sequence.png");
+        }
+      });
     </script>
   </body>
 </html>
+

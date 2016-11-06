@@ -49,6 +49,8 @@ You can add the following line into your vimrc for using `hand drawn` theme, set
 ```
 let g:generate_diagram_theme_hand = 1
 ```
+### Download as SVG or PNG
+Use the buttons at the bottom to download the diagram as SVG or PNG.
 
 License
 -----------------

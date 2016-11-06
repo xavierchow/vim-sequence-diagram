@@ -13,6 +13,7 @@ function! vim_seq_diag#Generate_diagram(pluginPath)
   call system("cp " . a:pluginPath . '/underscore-min.js' . " " . tmpDir)
   call system("cp " . a:pluginPath . '/raphael-min.js' . " " . tmpDir)
   call system("cp " . a:pluginPath . '/sequence-diagram-min.js' . " " . tmpDir)
+  call system("cp " . a:pluginPath . '/browser.min.js' . " " . tmpDir)
 
   let out = tmpDir . "out.html"
   call system("cp " . tmpl . " " . out)
@@ -21,12 +22,12 @@ function! vim_seq_diag#Generate_diagram(pluginPath)
   execute "tabe " . out
   "append the theme first to avoid the position of placeholder changes
   if g:generate_diagram_theme_hand == 1
-    call append(12, ["'hand'"])
+    call append(17, ["'hand'"])
   else
-    call append(12, ["'simple'"])
+    call append(17, ["'simple'"])
   endif
 
-  call append(10, buf)
+  call append(15, buf)
   silent :w!
   :bd
   execute "tabn " . originTab 
