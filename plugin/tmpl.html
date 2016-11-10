@@ -16,7 +16,7 @@
           `);
       diagram.drawSVG('diagram', {theme: 
       });
-      var svgsaver = new SvgSaver();
+      var svgsaver = new SvgSaver({attrs: true});
       var div = document.getElementById("diagram");
       var btn = document.getElementById("btnGroup");
       btn.addEventListener("click", function (e) {
