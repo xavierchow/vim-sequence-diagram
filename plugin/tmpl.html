@@ -21,10 +21,10 @@
       var btn = document.getElementById("btnGroup");
       btn.addEventListener("click", function (e) {
         if (e.target === document.getElementById("svg")) {
-          svgsaver.asSvg(div.firstElementChild, "sequence.svg");
+          svgsaver.asSvg(div.firstElementChild, "sequence_" + Date.now() + ".svg" );
         }
         if (e.target === document.getElementById("png")) {
-          svgsaver.asPng(div.firstElementChild, "sequence.png");
+          svgsaver.asPng(div.firstElementChild, "sequence_" + Date.now() + ".png");
         }
       });
     </script>
