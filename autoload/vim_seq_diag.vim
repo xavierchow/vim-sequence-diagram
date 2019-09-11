@@ -1,4 +1,20 @@
+fun! vim_seq_diag#openurl(url) "{{{
 
+  let cmd_browse = 'rundll32 url.dll,FileProtocolHandler '
+  let url_pat = '\w\+:\/\{2}[^ ''()]\+'
+
+  "TODO: match url with url_pattern..
+  if a:url != ''
+	let g:job = job_start(cmd_browse.a:url, {
+				\ 'out_cb'  : function('helper#job_cb', ['helper#job_out_cb' , {} ]),
+				\ 'exit_cb' : function('helper#job_cb', ['helper#job_exit_cb', {} ]),
+				\ 'out_mode': 'raw'
+				\})
+  else
+	echomsg 'sorry, no url found on this cursor''line'
+  endif
+
+endfunction "}}}
 function! vim_seq_diag#Generate_diagram(pluginPath)
   let buf = getline(1, '$')
   "for substitute here needs 4 backslashs, but remember it's inside of double
@@ -7,8 +23,9 @@ function! vim_seq_diag#Generate_diagram(pluginPath)
   call map(buf, 'substitute' . "(v:val, '`', '\\\\`', 'g')")
 
   let tmpl = a:pluginPath . '/tmpl.html'
-  let tmpDir = "/tmp/vim-js-seq/"
-  call system("mkdir " . tmpDir)
+  let tmpDir = expand("$tmp/vim-js-seq/")
+  call mkdir(tmpDir, "p", 0777)
+  " End 20190820 NIVA Fix tmpDir
   "TODO check file already exists?
   call system("cp " . a:pluginPath . '/underscore-min.js' . " " . tmpDir)
   call system("cp " . a:pluginPath . '/raphael-min.js' . " " . tmpDir)
@@ -35,7 +52,8 @@ function! vim_seq_diag#Generate_diagram(pluginPath)
   if has('mac')
     call system("osascript " . a:pluginPath . '/applescript/active.scpt')
   else
-    call system("xdg-open " . out)
+  	call vim_seq_diag#openurl(out)
+    " call system("xdg-open " . out)
   endif
 endfunction
 
